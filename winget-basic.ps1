@@ -13,6 +13,7 @@ $graphical = @(
 $apps = @(
     <# Azure VPN Client #> "9NP355QT2SQB"
     <# DevToys #> "9PGCV4V3BK4W"
+    "Git.Git"
     "Google.Chrome"
     "JetBrains.Rider"
     "JetBrains.Toolbox"
@@ -29,7 +30,6 @@ $apps = @(
     "OpenJS.NodeJS.LTS"
     "pnpm.pnpm"
     "Postman.Postman"
-    <# Spotify #> "9NCBCSZSJRSB"
 );
 
 $bloatware = @(
@@ -92,6 +92,8 @@ $bloatware = @(
     "Microsoft.MixedReality.Portal"
 
     # non-Microsoft
+    <# LinkedIn #> "9PL59F1G4XSZ"
+    <# Grammarly #> "Grammarly.Grammarly"
     "2FE3CB00.PicsArt-PhotoStudio"
     "46928bounde.EclipseManager"
     "613EBCEA.PolarrPhotoEditorAcademicEdition"
@@ -153,17 +155,21 @@ function install_winget {
                 Write-Host -ForegroundColor Yellow "Installing VCLibs dependencies..."
                 Add-AppxPackage -Path "https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx"
                 Write-Host -ForegroundColor Green "VCLibs dependencies successfully installed."
+                Write-Host ""
             }
             else {
                 Write-Host -ForegroundColor Green "VCLibs is already installed. Skip..."
+                Write-Host ""
             }
             if ($hasXAML.Version -lt "7.2203.17001.0") {
                 Write-Host -ForegroundColor Yellow "Installing XAML dependencies..."
                 Add-AppxPackage -Path "https://github.com/Kugane/winget/raw/main/Microsoft.UI.Xaml.2.7_7.2203.17001.0_x64__8wekyb3d8bbwe.Appx"
                 Write-Host -ForegroundColor Green "XAML dependencies successfully installed."
+                Write-Host ""
             }
             else {
                 Write-Host -ForegroundColor Green "XAML is already installed. Skip..."
+                Write-Host ""
             }
             if ($hasAppInstaller.Version -lt "1.16.12653.0") {
                 Write-Host -ForegroundColor Yellow "Installing WinGet..."
@@ -173,6 +179,7 @@ function install_winget {
     		    $latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith("msixbundle") } | Select-Object -First 1
     		    Add-AppxPackage -Path $latestRelease.browser_download_url
                 Write-Host -ForegroundColor Green "WinGet successfully installed."
+                Write-Host ""
             }
     }
     else {
@@ -205,6 +212,7 @@ function install_gui {
         else {
             Write-Host -ForegroundColor Yellow "$gui already installed. Skip..."
         }
+        Write-Host ""
     }
     Pause
 }
@@ -238,6 +246,7 @@ function install_silent {
         else {
             Write-Host -ForegroundColor Yellow "$app already installed. Skip..."
         }
+        Write-Host ""
     }
     Pause
 }
@@ -255,6 +264,7 @@ function debloating {
         } else {
             Write-Host "$blt not found. Skip..."
         }
+        Write-Host ""
     }
     Pause
 }
