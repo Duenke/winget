@@ -4,50 +4,48 @@
 ### Here can you add apps that you want to configure during installation ###
 # just add the app id from winget
 $graphical = @(
-    "ClamWin.ClamWin"
+    # "ClamWin.ClamWin"
 );
 
 ### These apps are installed silently for all users ###
 # for msstore apps you need to specify the source like below
 
 $apps = @(
-    "7zip.7zip"
-    "Foxit.FoxitReader"
-    "Microsoft.VCRedist.2015+.x64"
-    "Microsoft.VCRedist.2015+.x86"
-    "9NCBCSZSJRSB"          # Spotify
-    "9NKSQGP7F2NH"          # Whatsapp Desktop
-    "9WZDNCRFJ3TJ"          # Netflix
-    "9P6RC76MSMMJ"          # Prime Video
-    "9N7F2SM5D1LR"          # Windows HDR Calibration
-    "9PMMSR1CGPWG"          # HEIF-PictureExtension
-    "9MVZQVXJBQ9V"          # AV1 VideoExtension
-    "9NCTDW2W1BH8"          # Raw-PictureExtension
-    "9N95Q1ZZPMH4"          # MPEG-2-VideoExtension
+    <# Azure VPN Client #> "9NP355QT2SQB"
+    <# DevToys #> "9PGCV4V3BK4W"
+    "Google.Chrome"
+    "JetBrains.Rider"
+    "JetBrains.Toolbox"
+    "Microsoft.Azure.AZCopy.10"
+    "Microsoft.AzureCLI"
+    "Microsoft.AzureDataStudio"
+    <# Microsoft Office (365) #> "9WZDNCRD29V9"
+    "Microsoft.SQLServerManagementStudio"
+    "Microsoft.VisualStudio.2022.Enterprise"
+    "Microsoft.VisualStudioCode.Insiders"
+    "Microsoft.VisualStudioCode"
+    "Mozilla.Firefox.DeveloperEdition"
+    "Notepad++.Notepad++"
+    "OpenJS.NodeJS.LTS"
+    "pnpm.pnpm"
+    "Postman.Postman"
+    <# Spotify #> "9NCBCSZSJRSB"
 );
 
 $bloatware = @(
     # default Windows 11 apps
-    "MicrosoftTeams"
     "Microsoft.Todos"
     "Microsoft.PowerAutomateDesktop"
 
     # Win 11 22h2
-    "Clipchamp.Clipchamp"
     "MicrosoftCorporataionII.MicrosoftFamily"
     "BytedancePte.Ltd.TikTok"
     "FACEBOOK.317180B0BB486"
     "Facebook.Instagram*"
     "22364Disney.ESPN*"
 
-    # Windows 11 23h2
-    "Microsoft.OutlookForWindows"
-    "Microsoft.Windows.DevHomeAzureExtension"           # DEV Home
-    "Microsoft.Windows.Ai.Copilot.Provider"         # Copilot
-
     # default Windows 10 apps
-    "Microsoft.549981C3F5F10"           # Cortana Offline
-    "Microsoft.OneDriveSync"            # Onedrive
+    <# Cortana Offline #> "Microsoft.549981C3F5F10"
     "Microsoft.3DBuilder"
     "Microsoft.BingFinance"
     "Microsoft.BingNews"
@@ -55,7 +53,6 @@ $bloatware = @(
     "Microsoft.BingTranslator"
     "Microsoft.BingWeather"
     "Microsoft.FreshPaint"
-    #"Microsoft.GamingServices"
     "Microsoft.MicrosoftOfficeHub"
     "Microsoft.MicrosoftPowerBIForWindows"
     "Microsoft.MicrosoftSolitaireCollection"
@@ -67,28 +64,13 @@ $bloatware = @(
     "Microsoft.Print3D"
     "Microsoft.SkypeApp"
     "Microsoft.Wallet"
-    #"Microsoft.Windows.Photos"
     "Microsoft.WindowsAlarms"
-    #"Microsoft.WindowsCalculator"
-    #"Microsoft.WindowsCamera"
-    #"microsoft.windowscommunicationsapps"          # Mail and Calender     
+    <# Mail and Calender #> "microsoft.windowscommunicationsapps"
     "Microsoft.WindowsMaps"
     "Microsoft.WindowsPhone"
     "Microsoft.WindowsSoundRecorder"
-    #"Microsoft.WindowsStore"           # can't be re-installed
     "Microsoft.ZuneVideo"
     "Microsoft.YourPhone"
-    #"Microsoft.MSPaint"            # Paint & Paint3D
-    #"Microsoft.ZuneMusic"          # New Media Player in Windows
-
-    # Xbox Apps
-    #"Microsoft.Xbox.TCUI"
-    #"Microsoft.XboxApp"
-    #"Microsoft.XboxGameOverlay"
-    #"Microsoft.XboxSpeechToTextOverlay"
-    #"Microsoft.XboxGamingOverlay"
-    #"Microsoft.XboxIdentityProvider"
-    #"Microsoft.XboxSpeechToTextOverlay"
 
     # Threshold 2 apps
     "Microsoft.GetHelp"
@@ -96,7 +78,6 @@ $bloatware = @(
     "Microsoft.Messaging"
     "Microsoft.Office.Sway"
     "Microsoft.OneConnect"
-    "Microsoft.WindowsFeedbackHub"
 
     # Creators Update apps
     "Microsoft.Microsoft3DViewer"
@@ -109,11 +90,8 @@ $bloatware = @(
 
     # Redstone 5 apps
     "Microsoft.MixedReality.Portal"
-    "Microsoft.Whiteboard"
 
     # non-Microsoft
-    #"4DF9E0F8.Netflix"
-    #"SpotifyAB.SpotifyMusic"
     "2FE3CB00.PicsArt-PhotoStudio"
     "46928bounde.EclipseManager"
     "613EBCEA.PolarrPhotoEditorAcademicEdition"
